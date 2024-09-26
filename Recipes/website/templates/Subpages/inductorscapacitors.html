@@ -1,0 +1,67 @@
+{% extends 'circuits.html' %}
+
+{% block page %}
+<h1>Inductors and Capacitors</h1>
+<h2>What are passive components?</h2>
+<p>Passive components refer to components that dissipate and store energy. That is, they do not generate energy.
+    So far, these notes have only covered one passive element, the resistor. The resistor is known as a <b>passive
+    linear</b> component, since the current has a linear relationship with the voltage across it, Ohm's Law. There
+    other forms of passive component, capacitors and inductors. These differ to resistors for several reasons:</p>
+    <table>
+        <tr>
+            <th>Resistors</th>
+            <td>$V = I \times R$ </td>
+            <td>Dissipate energy as heat</td>
+        </tr>
+        <tr>
+            <th>Capacitors</th>
+            <td>$I = C \times \frac {dV}{dt}$ C - capacitance</td>
+            <td>Store energy in an electric field</td>
+        </tr>
+        <tr>
+            <th>Inductors</th>
+            <td>$V = L \times \frac {dI}{dt}$ L - inductance</td>
+            <td>Store energy in a magnetic field</td>
+        </tr>
+        
+</table>
+<h2>Under DC Conditions</h2>
+<p>Whilst capacitors and inductors are linear components, they do not operate quite like resistors. The current flowing
+    through a capcitor is proportional to the rate of change of Voltage across it. This means that, when the Voltage is fixed,
+    no current flows. The opposite is the case for inductors, where voltage is porportional to the rate of change of current,
+    Therefore, under perfect DC conditions, where the current does not change, the voltage across an inductor is zero.
+    <br><br>
+    Under DC conditions, it is easy to deal with inductors and capacitors:
+    <ul class="bullet">
+        <li class="bullet"><b>Inductors behave like a short-circuit</b>, under the assumption that their resistance is 0 Ω</li>
+        <li class="bullet"><b>Capacitors behave like an open-circuit</b>, under the assumption that their resistance is infinite.</li>
+    </ul>
+</p>
+<h2>Example 1</h2>
+<p>Consider the following circuit under d.c. conditions, what is the current through the inductor L1?
+</p>
+<div class="figure"><img src="/static/dc_inductor-capacitor.png" width="30%" height="30%"></div>
+<p>Given that the voltage applied is 5 V DC, the inductor and capacitor can be replaced with a short-circuit and open-circuit
+    respectively.
+</p>
+<div class="figure"><img src="/static/dc_inductor-capacitor2.png" width="30%" height="30%"></div>
+<p>The resistances of R2 and R3 can be summed to find the total series circuit resistance. $$R_T = R_2 + R_3$$ $$R_T = 20 + 30$$ $$R_T=50$$
+    The current can now be found using Ohm's law: $$I = \frac V R$$ $$I= \frac 5 {50} $$$$I = 0.1 = 100 mA$$
+</p>
+<h2>Under AC Conditions</h2>
+<p>Under a.c. conditions, these components act similarly to resistance and Ohm's law applies. Inductors and capacitors are known as
+    <b>reactive components</b> as their effect on the circuit is determined by their <b>reactance</b>. Reactance does not just change
+    the magnitude of the current for a given voltage, but it changes the <b>phase</b> of the current, i.e. how much current <i>leads</i>
+    or <i>lags</i> the voltage. This can be visualised in the following graph.
+</p>
+<div class="figure"><img src="/static/ac_graph1.png" width="75%"></div>
+<h2>Reactance</h2>
+<p>Reactance (units: Ohms, Ω) depends on two factors, the frequency of the source and the inductance or capacitance of the device.
+    The formulae are $$X_C = \frac 1 {\omega C} = \frac 1 {2 \pi f C}$$ $$X_L = \omega L = 2 \pi L$$
+    Resistances and reactances contribute to the overall impeadance. Impeadance is usually represented using $Z$ and also has units Ohms, Ω.
+    $$Z = R + jX$$ Here, $j$ is an imaginary number where Z is complex. X is the sum of $X_C$ and $X_L$ $$Z = R + j\omega L - j \frac 1 {\omega C}$$
+    Using complex representation, is is easy to apply Ohm's law: $V = I \times Z$. Furthermore the phase angle can be determined using the following
+    expression: $$\theta = \frac X R$$ and the magnitude can be determined using pythagorus: $$|Z| = \sqrt {}
+
+</p>
+{% endblock %}

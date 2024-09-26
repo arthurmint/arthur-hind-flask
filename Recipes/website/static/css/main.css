@@ -1,0 +1,572 @@
+/* theme */
+:root {
+    --default-font:Cambria;
+
+    --primary-col:rgb(131, 170, 131);
+    --secondary-col:rgb(77, 100, 77);
+    --tertiary-col:rgb(42, 42, 42);
+    --base-col:white;
+    --base-offset:rgb(244,244,244);
+
+    --primary-font:black;
+    --secondary-font:white;
+}
+
+
+.base {
+    background-color: var(--primary-col);
+    margin: 0;
+    font-family: Cambria;
+}
+.headerframe {
+    width:55%;
+    margin:auto;
+    padding: 32px;
+    text-align: justify;
+    background-color:var(--base-col);
+    border-radius: 15px;
+}
+
+.spacer {
+    height:300px;
+}
+
+.navbar {
+    background-color: var(--secondary-col);
+    font-family: Cambria;
+    width: 100%;
+    position: fixed;
+    z-index:1;
+}
+
+.navbar a {
+    float: left;    
+    font-size: 16px;
+    color: var(--secondary-font);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+.figure {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+    font-family: var(--default-font);
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: var(--secondary-font);
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0; 
+    font-family: var(--default-font);
+    border-radius: 0px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: var(--base-offset);
+    color: var(--secondary-col);
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--base-col);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--base-offset);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.topicnav {
+    overflow: hidden;
+    font-family: var(--default-font);
+    text-align: center;
+
+}
+
+.topicnav a {
+    float: left;
+    font-size: 16px;
+    background-color: var(--base-offset);;
+    color: var(--primary-font);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-block: 5px;
+
+}
+
+.topicnav a:hover {
+    background-color: var(--primary-col);
+    color:var(--secondary-font);
+}
+
+.topicnav a.active {
+    background-color: var(--primary-col);
+    color:var(--secondary-font);
+
+}
+
+
+.frame {
+    width:55%;
+    margin:auto;
+    padding: 32px;
+    text-align: justify;
+    background-color:var(--base-col);;
+    border-radius: 15px;
+}
+
+footer {
+    left:0;
+    bottom:0;
+    width:100%;
+    position: fixed;
+    background-color:var(--tertiary-col);
+    color:var(--secondary-font);
+    padding: 20px;
+    height:100px;
+    opacity: 0;
+    animation: out 0.3s forwards;
+}
+
+footer:hover {
+    animation: in 0.3s forwards;
+}       
+
+@keyframes in {
+    0% {opacity:0%}
+    100% {opacity:100%}
+}
+@keyframes out {
+    from {opacity:100%}
+    to {opacity:0%}
+}
+
+ul {
+    list-style-type: none;
+    
+}
+
+
+
+ul.bullet {
+    list-style-type: circle;
+}
+
+li.bullet {
+    float: left;
+    font-size: larger;
+}
+
+
+table {
+    font-family: var(--default-font);
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+
+/* fonts */
+h1 {
+    font-family: 'Cambria';
+    
+}
+h2 {
+    font-family: 'Cambria';
+    color:rgb(0, 51, 0)
+}
+h3 {
+    font-family: 'Cambria';
+}
+h4 {
+    font-family: 'Cambria';
+}
+p {
+    font-size: larger;
+    font-family: 'Cambria';
+}
+
+
+/* navigation arrows */
+.arrow {
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    
+  }
+  
+.arrow-right {
+    border-left: 10px solid rgb(77, 100, 77);;
+    right: 0;
+}
+  
+.arrow-left {
+    border-right: 10px solid rgb(77, 100, 77);; 
+    left: 0;
+}
+
+.arrow-min {
+    border-right: 10px solid grey; 
+    left: 0;
+}
+
+.arrow-max {
+    border-left: 10px solid grey; 
+    right: 0;
+
+}
+  
+.container {
+    margin: 5% auto;
+    font-size: 20px;
+    position: relative;
+    width: 15em;
+}
+  
+.header {
+    text-align: center;
+    font-family: Cambria;
+}
+
+/* sign up */
+
+.form-inline {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-full {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-width:360px;
+
+
+}
+
+.input-label {
+    font-family: Cambria;
+    background-color: rgb(244, 244, 244);
+    font-size: 16px;
+    border-radius: 10px;
+    border:none;
+    padding: 16px 16px;
+    width:360px;
+    color:var(--primary-font);
+    
+}
+
+.sign-up {
+    font-family: Cambria;
+    background-color: rgb(244, 244, 244);
+    font-size: 16px;
+    border-radius: 10px;
+    border:none;
+    padding: 16px 16px;
+    width:360px;
+    
+}
+
+.sign-up:focus {
+    outline: 0.15em solid rgb(131, 170, 131);
+}
+
+
+button {
+    overflow: hidden;
+    font-family: Cambria;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(244, 244, 244);
+    color: black;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    border:none;
+    top:50%;
+    left:35%;
+    position: inherit;
+
+    outline-width: 0.15em;
+    outline-style: solid;
+    outline-color: rgb(244, 244, 244);
+}
+
+button:hover {
+    background-color: rgb(131, 170, 131);
+    color:white;
+    outline: 0.15em solid rgb(131, 170, 131);
+}
+
+.button:focus {
+    outline-color: rgb(131, 170, 131);
+}
+
+
+/* quiz */ 
+.question {
+    background-color: rgb(244, 244, 244);
+    padding:16px 16px;
+    border-radius: 15px;
+}
+
+.form-left {
+    display:block;
+    justify-content: left;
+    align-items: left;
+}
+
+.answer-box {
+    font-family: Cambria;
+    background-color: rgb(244, 244, 244);
+    font-size: 16px;
+    border-radius: 10px;
+    border:none;
+    padding: 16px 16px;
+    margin-right: 1%;
+}
+
+.answer-box:focus {
+    outline: 0.15em solid rgb(131, 170, 131);
+}
+
+.grid-container {
+    display: grid;  
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.correct {
+    color:rgba(45, 184, 45, 0.793);
+}
+
+.incorrect {
+    color:rgb(216, 39, 39);
+}
+
+.alert-box { 
+    width:55%;
+    margin:auto;
+    padding: 32px;
+    text-align: justify;
+    background-color:white;
+    border-radius: 15px;
+    justify-content: left;
+    align-items: left;
+    animation: fade-in 0.5s forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+        
+    }
+    10%{
+        opacity:0%;
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(20px);
+    }
+} 
+
+
+.next-button {
+    overflow: hidden;
+    font-family: Cambria;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(244, 244, 244);
+    color: black;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    border:none;
+    top:50%;
+    left:35%;
+    position: inherit;
+}
+
+.next-button:hover {
+    background-color: rgb(42, 42, 42);
+    color:white;
+}
+
+.topic-button {
+    overflow: hidden;
+    font-family: Cambria;
+    font-size: 16px;
+    background-color: var(--base-col);
+    color: black;
+    text-align: left;
+    padding: 16px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    top:50%;
+    left:35%;
+    display:block; 
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 14px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topic-button:hover {
+    animation: colour-change 300ms forwards;
+    
+}
+
+@keyframes colour-change {
+    100% {
+        
+        background-color: rgb(232, 231, 231);
+    }
+}    
+
+.button-box {
+    display: flex;
+    align-items: center;
+}
+
+.button-img {
+    vertical-align: middle; 
+    border-radius: 10px;
+    box-shadow: 1px;
+    padding: 8px 16px;
+}
+
+/* progress */
+.meter { 
+    height: 10px;
+    position: relative;
+    background: rgb(244, 244, 244);;
+    border-radius: 15px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  }
+
+  .meter > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgb(6, 122, 255);
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 1s;
+  }
+
+
+  /* collapsible divider */
+
+  .expandable {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .toggle-label {
+    float: left;
+    font-size: 16px;
+    background-color: var(--base-offset);
+    color: var(--primary-font);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-block: 5px;
+    cursor:pointer;
+  }
+
+  .toggle-label:hover {
+    background-color: var(--primary-col);
+    color:var(--secondary-font);
+}
+  
+  .plus, .minus {
+    display: inline-block;
+    width: auto;
+    height: 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    
+  }
+  
+  .minus {
+    display: none;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  input[type="checkbox"]:checked + .toggle-label .plus {
+    display: none;
+  }
+  
+  input[type="checkbox"]:checked + .toggle-label .minus {
+    display: inline-block;
+  }
+  
+  input[type="checkbox"]:checked + .toggle-label + .expandable {
+    max-height: 100px; /* Adjust this value as needed */
+  }
+
+  .icon {
+    width:24px;
+    height:24px;
+    border-radius: 4px;
+    padding: 1px;
+    vertical-align:middle;
+  }

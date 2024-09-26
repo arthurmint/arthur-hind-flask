@@ -1,0 +1,4 @@
+question	figure	correct_answer	solution
+What is the current flowing through the resistor with resistance 100? and voltage 5V	\static\series_resistor2.png	0.05	0.05
+What is the voltage drop across the resistor of 1k? drawing 15mA	\static\series_resistor2.png	15	15
+What is the resistance of the resistor if the current draw is 33mA and voltage 1V	\static\series_resistor2.png	30.3030303	30.3030303

@@ -1,0 +1,67 @@
+{% extends 'circuits.html' %}
+
+{% block page %}
+
+
+<h1>Ohm's Law</h1>
+    <h2>What is Ohm's Law?</h2>
+    <p>Ohm's law is a fundamental relationship that affects almost every electric circuit. 
+        It shows that the votlage across a load is approximately proportional to the current flowing through it. <br><br>
+        Consider a simple DC circuit consisting of a resistor, with resistance R and a voltage source of V Volts.
+        <img>
+        $$V = I \times R$$ 
+        Where $V$ is voltage (Volts), $I$ is current (Amps) and $R$ is resistance (Ohms)
+        showing that the voltage across a resistive load is proportional to the current flowing through it.
+    </br></br>It is important to note that the direction of the voltage opposes the flow of current through a passive device,
+        this is why it is known as a voltage "drop". This is because passive devices consume energy. Resistors, for example,
+        dissipate energy in the form of heat.
+    </p>
+    <h2>Example 1</h2>
+    <p>For example, if the current flowing through a resistor of 1kΩ is 100mA, what is the voltage drop across
+        the resistor?
+    </p>
+    $$V = IR$$ 
+    $$V = 100mA \times 1kΩ$$
+    $$V = 100 \space V$$
+    <h2>Resistors in series</h2>
+    <p>Resistors connected together in series are simple to work with. Their individual resistances can be added together and represented with a single resistor.
+    </p>
+    $$R_T = R_1 + R_2 + R_3 +...$$
+    <h2>Example 2</h2>
+    <p>Consider the following circuit where R1 = 100Ω, R2 = 500Ω, R3 = 1.5kΩ. We need to find the current in the circuit.</p>
+    </br>
+    <div class="figure"><img src="/static/series_resistor.png" width="30%" height="30%"></div>
+    </br>
+    <p>First, the total resistance can be found using this rule: $R_T =   100 + 500 + 1.5\times 10^3 = 2.1kΩ$ A new circuit can be drawn to represent this. </p>
+    </br>
+    <div class="figure"><img src="/static/series_resistor2.png" width="30%" height="30%"></div>
+    </br>
+    <p>Using this circuit, the current can be easily found using Ohm's Law. $$I = \frac VR$$ $$I = \frac {5}{2.1 \times 10^3}$$ $$I = 2.38 mA$$</p>
+    <h2>Resistors in parallel</h2>
+    <p>Resistors connected in parallel are combined differently as the current is effectively shared between each resistor depending on its resistance. 
+        Their individual resistances can still be combined and represented by a single resistor using this relationship:</p>
+    $$\frac 1{R_T} = \frac 1{R_1} + \frac1{R_2} + \frac 1{R_3} +...$$
+    <p>Which can be calculated quickly using:</p>
+    $$R_T = \frac {R_1R_2R_3\times ...}{R_1R_2 + R_1R_3 +R_2R_3 +...}$$
+    <h2>Example 3</h2>
+    <p>Consider the following resistors in parallel with values R1 = 5kΩ, R2 = 15kΩ and R3 = 1kΩ</p>
+    </br>
+    <div class="figure"><img src="/static/parallel_resistor1.png" width="30%" height="30%"></div>
+    </br>
+    <p>In order to find the voltage drop across the resistors, we can combine them into one resistor and apply Ohm's law.</p>
+    </br>
+    <div class="figure"><img src="/static/parallel_resistor2.png" width="30%" height="30%"></div>
+    </br>
+    $$R_T = \frac {5 \times 15 \times 1}{5 \times 15 + 15\times 1 + 5\times 1} kΩ$$
+    $$R_T = \frac {75}{75 + 15 + 5} kΩ$$
+    $$R_T = \frac {75}{95} kΩ$$
+    $$R_T = 0.789 k\Omega$$
+    <p>Now Ohm's law can be applied</p>
+    $$V= IR$$
+    $$V= 19mA \times 0.789kΩ$$
+    $$V= 15V$$
+
+    
+
+
+{% endblock %}  

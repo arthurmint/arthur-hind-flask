@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/toggle.css">
+    <title>
+      {% block title %}
+      
+      {% endblock %}
+    </title>
+  </head>
+  
+  <body class='base'>
+    <!--
+    <div class="navbar">
+      <a href="/" style="padding: 0px 0px;"><img style="float: left" href="/" src="/static/EEE_GW.png" width="65" height="47"></a>
+      <a href="/equations">Equations Bank</a>
+      <div class="dropdown">
+        <button class="dropbtn">Notes
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/electronics/circuits">Electronic Circuits</a>
+          <a href="#">Magnetic Circuits</a>
+          <a href="#">Logic Circuits</a>
+          <a href="#">Semiconductor Devices</a>
+        </div>   
+      </div>
+      
+      <div class="dropdown">
+        <button class="dropbtn">Programming Notes
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">C/C++</a>
+          <a href="#">Python</a>
+          <a href="#">MatLab</a>
+        </div>   
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Mathematics Notes
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Complex Numbers</a>
+          <a href="#">Calculus</a>
+          <a href="#">Matrices & Vectors</a>
+        </div>   
+      </div>
+      <a href="/practice">Practice</a>
+
+      <a href="/tutoring">Tutoring</a>
+      <div style="float:right;
+                  padding:5px 5px;">
+        <label class="toggle-switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+        
+      -->
+      </div>
+    </div>
+  <!--</br></br></br>--></br>
+    <div class="headerframe">
+      {% block header %}
+      {% endblock %}
+    </div>
+    </br>
+    {% block content %}
+    {% endblock %}
+  </br>
+  <!--
+    <div class="spacer"></div>
+    <div class="footer">
+    <footer>
+      <ul>
+        <li><img src="/static/EEE_NBG.png" height="80"></li>
+        <li><h4>Support our work</h4>
+                <a href="patreon.com">Patreon</a>
+        </li>
+        <li><h4>Spotted a mistake?</h4>
+                Let us know</li>
+    
+        <li><h4>Join the community</h4>
+              <a style="text-decoration: none; color:white;" href="https://www.discord.gg"><img src="/static/discord.svg" width="12%" height="12%" > Discord</a>
+      </ul>
+    </footer>
+  </div>
+  -->
+  </body>
+</html>

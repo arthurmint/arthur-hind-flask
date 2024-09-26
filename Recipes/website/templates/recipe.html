@@ -1,0 +1,18 @@
+{%extends 'base.html' %}
+{%block title%} {{ name }} {%endblock%}
+
+{% block header %}
+<a style="text-decoration: none; color: inherit" href="/"><h1>Arthur's Recipes</h1></a><h2>{{name}}</h2>
+{% endblock %}
+{% block content %}
+<div class="frame"> 
+    {% if oven %}<img class="icon" title="This recipe uses the oven" src="/static/oven.png"> Oven {% endif %}{% if pan %}<img title="This recipe uses the stove" class="icon" src="/static/pan.png"> Stove {% endif %}{% if veggie %}<img title="This recipe is Vegetarian" class="icon" src="/static/veggie.png"> Vegetarian {% endif %}
+    <h3>Ingredients</h3>
+    <ul style="padding: 0">
+    {% for i in range(0,listlength) %}
+    <li>{{ ingredients[i] }}</li>
+    {% endfor %}
+</ul>
+</br>
+</div>
+{% endblock %}

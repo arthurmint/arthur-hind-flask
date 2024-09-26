@@ -1,0 +1,74 @@
+{% extends 'circuits.html' %}
+
+{% block page %}
+<h1>Thevenin Theorem</h1>
+<p>Thevenin theorem improves circuit analysis by removing a load resistor between two nodes and modelling the remaining circuit
+    with a voltage source in series with a resistor as shown below.</p>
+<div class="figure"><img src="\static\thevenin_example1.png" width="35%" height="35%"></div>
+<p>In general, there are four simple steps to be taken when undertaking thevenin analysis:
+    <br>
+    <br>1. Identify the 2 nodes of interest, in our case they are labelled A and B.     
+    <br>2. Open-circuit by disconnecting the load resistor between the 2 nodes.
+    <br>3. Determine the Thevenin voltage, $V_{Th}$, by evaluating the open-circuit voltage between nodes A and B.
+    <br>4. Determine the Thevenin resistance, $R_{Th}$, often achieved by evaluating the short citcuit current and using Ohm's Law to determine this value.
+    <br><br>The circuit can now be drawn in the format shown above and other calculations can be carried out as normal.</p>
+    <br>
+    <h2>Example 1</h2>
+    <p>Consider the following circuit, our aim is to find the current flowing through the load resistor $R_L$</p>
+    <div class="figure"><img src="\static\thevenin_example2.png" width="35%" height="35%"></div>
+    <p>Firstly, we must open-circuit between nodes A and B to analyse the remaining circuit.</p>
+    <div class="figure"><img src="\static\thevenin_example3.png" width="35%" height="35%"></div>
+    <p>Current still flows through this circuit, so to calculate the Thevenin voltage we need to
+        the current flowing in order to determine the voltage drop across each resistor.
+        This can be achieved easily by combining both series resistors and voltage sources to draw a temporary ciruit.
+    </p>
+    <div class="figure"><img src="\static\thevenin_example4.png" width="35%" height="35%"></div>
+    <p>Current, $I_R$ can now be determined using Ohm's Law: $$I = \frac VR$$ $$I_R= \frac {-7}{320}$$ $$I_R = -0.0218.. A$$</p>
+    <div class="figure"><img src="\static\thevenin_example3.png" width="35%" height="35%"></div>
+    <p>The voltage drop across R1 can be calculated: $$V_{R1} = -0.0218 \times 100 = -2.1875 V$$</p>
+    <p>Thus, the open circuit voltage (i.e the Thevenin voltage) can be determined using:
+        $$V_{Th} = V_1 - V_{R1}$$ $$V_{Th} = 5 - (-2.1875)$$ $$V_{Th} = 7.19 V$$
+    </p>
+    
+    <p>Now we must determine the equivalent resistance betweent the open-circuited nodes A and B.
+        This can be achieved by assuming zero resistance of the voltage sources and combining the values in parallel:
+    </p><div class="figure"><img src="\static\thevenin_example5.png" width="35%" height="35%"></div>
+    <p>
+        $$R_{Th} = R_1 // R_2$$
+        $$R_{Th} = \frac {100 \times 220} {100 + 220}$$
+        $$R_{Th} = 68.75 \Omega$$
+    </p>
+    <p>The Thevenin equivalent circuit can now be drawn to represent these calculations.</p>
+    <h1>Norton Theorem</h1>
+    <p>Similar to Thevenin, Norton Theorem allows you to represent a complex array of resistances and sources with one source and one resistor.
+        However, with Norton Theorem, a current source is used in parallel with a resistor. The method for obtaining these values is similar.
+    </p>
+    <p>
+        <br>
+        <br>1. Identify the 2 nodes of interest, in our case they are labelled A and B.     
+        <br>2. Open-circuit by disconnecting the load resistor between the 2 nodes. 
+        <br>3. Find the <b>'short-circuit current'</b>, which is the current between nodes A and B when connected by a wire of zero resistance.
+        <br>4. Determine the resistance between the two nodes, the same as with Thevenin.
+        <br>These values can be used in a circuit like the one below.
+    </p>
+    <h2>Example 2</h2>
+    <p>Consider the following circuit, similiar to the one used in Example 1.</p>
+    <div class="figure"><img src="\static\norton_example1.png" width="35%"></div>
+    <p>Firstly we must remove the load resistor and short-circuit between the two nodes.</p>
+    <p>Using this circuit, we must determine the short-circuit current. This can be done with
+        loop analyis. First, on the left. $$V_1 - V_{R1} = 0$$ $$I_1R_1 = 10$$ $$12I_1 = 10$$ $$I_1 = \frac {10}{12} = \frac 56 \space A$$
+    </p>
+    <p>Now, the right-hand loop can be used to find I2 
+        $$V_2 + V_{R2} = 0$$ $$V_{R2} = V_2$$ $$I_2R_2=-6$$ $$4I_2 = -6$$ $$I_2 = -\frac 6 4 = - \frac 3 2 \space A$$
+    </p>
+    <p>Using nodal analysis, we can combine $I_1$ and $I_2$ to find $I_{s/c}$ $$I_{SC}=I_1 + I_2$$
+        $$I_{SC} = \frac 56 - \frac 32$$ $$I_{SC} = - \frac 2 3$$ $$I_N = I_{SC} = -0.667 \space A$$
+    </p>
+    <p>Finally, to determine the Norton Resistance, the same method can be applied as before, where the
+        voltage sources are short-circuited and the resistance between the two nodes is found using the
+        parallel reistances formula. $$R_N = \frac {12 \times 4} {12 + 4}$$ $$R_N = \frac {48}{16}$$
+        $$R_N = 3\Omega$$
+    </p>
+    {% endblock %}
+
+

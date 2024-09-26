@@ -1,0 +1,19 @@
+{% extends 'circuits.html' %}
+
+{% block page %}
+<h1>Kirchoff's Laws </h1>
+    <h2>Kirchoff's Current Law (KCL)</h2>
+    <p>Kirchoff's current law states that the total current entering a node is equal to the total current leaving that node, 
+        or the net current flowing into node equals zero. <br>
+         </p>
+    <p>Consider the circuit below. To find an expression for I1 in terms of I2 and I3, we can apply Kirchoff's current law at the bottom node.</p>
+        <div class="figure"><img src="/static/kirchoff_current1.png" width="40%" height="40%"></div>
+        <p>$I_3 = I_4$ since they are not separated by any nodes and the current flowing into a resistor equals that flowing out.
+        Therefore, entering the bottom node we have I1 and I4 and leaving this node, we have I2.
+        Thus we can write: $$I_1 + I_4 = I_2$$ $$I_1 + I_3 = I_2$$ $$I_1 = I_2 - I_3$$</p>
+    <br/><br/>
+    <h2>Kirchoff's Voltage Law (KVL)</h2>
+    <p>Consider every complete loop in a circuit, KVL states that the net sum of the potential across all the devices in every complete loop equals zero.</p>
+    <div class="figure"><img src="/static/kirchoff_voltage1.png" width="40%" height="40%"></div>
+
+    {% endblock %}
