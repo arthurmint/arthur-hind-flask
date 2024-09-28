@@ -1,17 +1,15 @@
 from flask import Flask
 import json
-###import urllib3
+import urllib3
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'wfbk3gw29587paogjnl'
 
-    """ ### In production ###
     with open('/etc/config.json') as config_file:
         config = json.load(config_file)
 
     app.config['SECRET_KEY'] = config.get('SECRET_KEY')
-    """
+    
 
     from .views import views, electronics
     from .auth import auth
@@ -22,5 +20,4 @@ def create_app():
 
     return app
     
-### In production ###
-# app = create_app()
+app = create_app()

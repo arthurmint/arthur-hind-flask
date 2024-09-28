@@ -163,7 +163,19 @@ footer {
 
 footer:hover {
     animation: in 0.3s forwards;
-}       
+}
+
+footer ul {
+    overflow: hidden;
+    top: 0;
+    position: relative;
+}
+
+footer li {
+    float: left;
+    position:relative;
+    margin-right: 100px;
+}
 
 @keyframes in {
     0% {opacity:0%}

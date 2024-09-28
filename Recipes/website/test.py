@@ -4,11 +4,6 @@ import pandas as pd
 X = pd.read_csv('website\static\practiceq.csv', header=None)
 
 
-print(len(X))
-
-
-
-
 @views.route('/practice/<num>', methods=['GET', 'POST'])
 def practice(num):
     if request.method == 'POST':

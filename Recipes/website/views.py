@@ -14,9 +14,7 @@ def recipes():
 """
 @views.route('/')
 def recipes():
-    recipes = pd.read_csv('website/static/recipes.csv', header=None)
-
-    print(recipes)
+    recipes = pd.read_csv('website/static/recipes.csv', header=None).dropna()
 
     """
     if str(sort) == "fastest":
@@ -45,12 +43,16 @@ def practice(num: int):
             pan = True
         if recipes[12][int(num)] == "y":
             veggie = True
+
+        methods = str(recipes[13][int(num)]).split(';')
         return render_template("recipe.html", name=recipes[0][int(num)],
                                ingredients=ingredients,
                                listlength=len(ingredients),
                                pan=pan,
                                oven=oven,
-                               veggie=veggie) 
+                               veggie=veggie,
+                               methods=methods,
+                               methodlength=len(methods)) 
 
     
     
